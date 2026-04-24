@@ -1,11 +1,9 @@
 import * as motion from "framer-motion/client";
 import { CustomCursor, Navbar, MagneticButton, Counter, Typewriter, TiltCard, AnimatedLine, ParallaxImage } from "@/components/ui/InteractiveComponents";
 
-export default async function Home() {
-  
-  // ============================================================================
-  // DATOS ESTÁTICOS DE PRUEBA (BORRAR O COMENTAR CUANDO USES LA BD)
-  // ============================================================================
+export default function Home() {
+
+  // Contenido estático del sitio
   const t = (key: string, fallback: string) => fallback;
   
   const serviceCards = [
@@ -62,7 +60,7 @@ export default async function Home() {
   };
   const fadeUp: any = {
     hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 1, 0.3, 1] } }
   };
 
   return (
