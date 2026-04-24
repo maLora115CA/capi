@@ -1,9 +1,5 @@
-// TODO: DESCOMENTAR CUANDO TENGAS LA BASE DE DATOS CONECTADA
-// import { prisma } from "@/lib/prisma";
 import * as motion from "framer-motion/client";
 import { CustomCursor, Navbar, MagneticButton, Counter, Typewriter, TiltCard, AnimatedLine, ParallaxImage } from "@/components/ui/InteractiveComponents";
-
-export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   
@@ -60,13 +56,13 @@ export default async function Home() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   // Constantes de animación global
-  const staggerContainer = {
+  const staggerContainer: any = {
     hidden: { opacity: 0 },
     show: { opacity: 1, transition: { staggerChildren: 0.15 } }
   };
-  const fadeUp = {
+  const fadeUp: any = {
     hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.25, 1, 0.3, 1] } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
   return (
