@@ -1,0 +1,39 @@
+PROPUESTAS DE DISEÑO: ACOMPAÑA (Minimalista, Interactivo y Estético)
+====================================================================
+
+Para elevar la página a un nivel "Premium/Boutique" meramente estético y minimalista, debemos enfocarnos en 5 pilares clave. Aquí te detallo las mejoras que deberíamos aplicar:
+
+1. GLASSMORPHISM Y MATERIALES SUAVES (Estética)
+------------------------------------------------
+En lugar de fondos blancos sólidos o tarjetas con bordes grises, utilizaremos el efecto de "cristal esmerilado" (Glassmorphism).
+- Quitar los bordes (`border-gray-100`) de las tarjetas de servicios.
+- Aplicar fondos semi-transparentes (`bg-white/40`) con desenfoque de fondo (`backdrop-blur-xl`).
+- Las sombras deben ser increíblemente suaves y amplias, no oscuras. Ejemplo: `shadow-[0_20px_40px_-15px_rgba(178,172,136,0.15)]`.
+
+2. ESPACIO NEGATIVO Y TIPOGRAFÍA (Minimalismo)
+------------------------------------------------
+El minimalismo respira a través del espacio vacío.
+- Duplicar el "padding" (espacio interno) entre las secciones. Pasar de `py-24` a `py-32` o `py-40`. 
+- Títulos masivos pero ligeros. Usaremos la fuente "Outfit" en su versión más fina (`font-light` o `font-thin`) para los encabezados principales, creando un contraste dramático.
+- Eliminar cualquier línea o separador innecesario. 
+
+3. ANIMACIONES FLUIDAS CON FRAMER MOTION (Interactividad)
+----------------------------------------------------------
+Ya tenemos Framer Motion instalado, vamos a sacarle provecho.
+- Efecto Parallax: Cuando hagas scroll hacia abajo, los fondos (o los círculos decorativos desenfocados) deben moverse a una velocidad ligeramente distinta que el texto, dando profundidad 3D.
+- Reveal on Scroll (Aparición en Cascada): Las tarjetas de servicio no deben estar ahí estáticas. Cuando bajes a esa sección, deben flotar suavemente hacia arriba una por una (stagger effect).
+- Cursor Interactivo (Opcional pero muy estético): Un cursor personalizado suave que se expanda cuando pasas sobre una tarjeta o un botón.
+
+4. EL "HERO" (La primera impresión)
+------------------------------------------------
+La imagen actual de gradiente oscuro es un poco clásica.
+- Opción A (Video): Un video de fondo (lento, cálido, de alta calidad) con un overlay de color salvia/beige muy transparente.
+- Opción B (Texturas orgánicas): Un fondo completamente limpio (color crema) con grandes manchas de luz desenfocadas flotando y moviéndose lentamente en el fondo (como lámparas de lava difuminadas).
+
+5. MICRO-INTERACCIONES
+------------------------------------------------
+- Los botones (como el de WhatsApp) no solo deben saltar al hacer hover. El fondo del botón podría rellenarse suavemente desde el centro, o el ícono podría tener un ligero giro.
+- Al pasar el mouse por las tarjetas de servicio, el ícono correspondiente podría cambiar de tamaño ligeramente o cambiar sutilmente de color salvia a un tono más oscuro.
+
+¿CÓMO PROCEDER?
+Si te gustan estas propuestas, el siguiente paso es que me pidas implementarlas en `src/app/page.tsx` y `src/app/globals.css`. Empezaremos aplicando los fondos difuminados, ajustando los espacios masivos, programando las animaciones en cascada y refinando la tipografía de inmediato.

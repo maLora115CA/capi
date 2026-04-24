@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-beige: #E6DFCD;
+  --color-brand-sage: #6B7A65;
+  --color-brand-charcoal: #1A1C19;
+  --color-brand-sage-dark: #4A5746;
+  --color-brand-beige-light: #F8F5EE;
+  --color-brand-cream: #F4F1E8;
+  
+  --font-display: var(--font-outfit);
+}
+
+body {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-charcoal);
+  font-family: var(--font-outfit), sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a, button, [role="button"] {
+  cursor: none;
+}
+
+/* Animations */
+@keyframes halo-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+.animate-halo-ring {
+  animation: halo-ring 2s cubic-bezier(0.25, 1, 0.3, 1) infinite;
+}
+
+@keyframes conic-spin {
+  100% { transform: rotate(360deg); }
+}
+.animate-conic-spin {
+  animation: conic-spin 4s linear infinite;
+}
+
+/* Conic Border Card */
+.conic-border-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 1.5px;
+}
+.conic-border-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: conic-gradient(from 0deg, transparent 0%, transparent 60%, var(--color-brand-sage) 80%, var(--color-brand-beige) 100%);
+  animation: conic-spin 4s linear infinite;
+  z-index: -1;
+}
+.conic-border-inner {
+  background: var(--color-brand-charcoal);
+  border-radius: 23px;
+  height: 100%;
+}
+
+/* Shadows */
+.shadow-sm { box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+.shadow-md { box-shadow: 0 16px 32px rgba(0,0,0,0.08); }
+.shadow-lg { box-shadow: 0 40px 60px rgba(26,28,25,0.15); }
+.shadow-glow { box-shadow: 0 0 40px rgba(107, 122, 101, 0.4); }
+
+/* Faint Grid */
+.bg-grid-pattern {
+  background-image: radial-gradient(var(--color-brand-beige) 1.5px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* Utilities */
+.text-shadow-sm { text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+
+/* Tooltip group */
+.group-hover-tooltip:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}

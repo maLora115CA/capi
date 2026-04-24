@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model ContentBlock {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique // e.g., 'hero_title', 'hero_subtitle'
+  value     String   @db.Text
+  imageUrl  String?
+  updatedAt DateTime @updatedAt
+}
+
+model ServiceCard {
+  id          Int      @id @default(autoincrement())
+  order       Int      @default(0)
+  title       String
+  description String   @db.Text
+  features    String[] // array of strings
+  highlighted Boolean  @default(false)
+  iconSvg     String   @db.Text
+  updatedAt   DateTime @updatedAt
+}
+
+model AdminUser {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime @default(now())
+}
